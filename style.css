@@ -65,12 +65,17 @@ header nav ul li a {
   color: white;
 }
 
-.show {
-  -webkit-animation: show .3s forwards ease-in-out;
-          animation: show .3s forwards ease-in-out;
+.showAbout {
+  -webkit-animation: showAbout .3s forwards ease-in;
+          animation: showAbout .3s forwards ease-in;
 }
 
-@-webkit-keyframes show {
+.hideAbout {
+  -webkit-animation: hideAbout .3s forwards ease-in-out;
+          animation: hideAbout .3s forwards ease-in-out;
+}
+
+@-webkit-keyframes showAbout {
   0% {
     left: -900px;
   }
@@ -79,12 +84,30 @@ header nav ul li a {
   }
 }
 
-@keyframes show {
+@keyframes showAbout {
   0% {
     left: -900px;
   }
   100% {
     left: 30px;
+  }
+}
+
+@-webkit-keyframes hideAbout {
+  0% {
+    left: 30px;
+  }
+  100% {
+    left: -900px;
+  }
+}
+
+@keyframes hideAbout {
+  0% {
+    left: 30px;
+  }
+  100% {
+    left: -900px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -60,17 +60,32 @@ header {
     
 }
 
-.show {
+
+//About button
+.showAbout {
     
-    animation: show .3s forwards ease-in-out;
+    animation: showAbout .3s forwards ease-in;
     
 }
+
+.hideAbout {
+    animation: hideAbout .3s forwards ease-in-out;
+
+}
  
-@keyframes show {
+@keyframes showAbout {
     0%{
        left: -900px; 
     }
     100%{
        left: 30px; 
+    }
+}
+@keyframes hideAbout {
+    0%{
+        left: 30px; 
+    }
+    100%{
+        left: -900px; 
     }
 }
