@@ -16,3 +16,7 @@ let aboutBtn = document.querySelector("#aboutBtn").addEventListener('click', () 
 
    return console.log(introCanvas.classList)
 })
+
+let hamburgBtn = document.querySelector('#hamburg').addEventListener('click', () => {
+    introCanvas.classList.toggle('menu-open')
+})

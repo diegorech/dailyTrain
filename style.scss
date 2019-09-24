@@ -7,85 +7,148 @@
     text-decoration: none;
     list-style: none;
 }
-body {
-    background: rgb(150, 150, 150);
+html, body {
+    width: 100%;
+    height: 100%;
 }
-header {
-    
-    background: rgb(56, 55, 55); 
-    text-align: center;
-    align-content: center;
-    padding: 1em;
-    nav {        
-        ul{     
-            display: grid;
-            grid-template-columns: repeat(3, auto);               
-           li {
-                display: inline-block;
-                justify-self: center;
-                //border-right: 1px solid white;
-                max-width: 100px;
-                padding: .6em;
-                transition: all .5s;
+
+body {
+    background: rgb(212, 212, 212);
+    header {
+            
+        background: rgb(56, 55, 55); 
+        text-align: center;
+        align-content: center;
+        display: block;
+        height: 70px;
+        line-height: 70px;
+        
+        nav {            
+            label {
+                font-size: 40px;
+                float: right;
+                margin: 0 40px;
+                cursor: pointer;
+                color: white;
+                display: block;
+            }
+            .menu {
+                display: none;
+                background-color: black;;
                 
                 a {
+                    text-decoration: none;
+                    font-size: 25px;
                     color: white;
-                    font-size: 1.5em;
-                    
+                    display: block;
+                    border-bottom: 1px solid #eaeaea;
+                    line-height: 70px;
+                    clear: right;
+                }    
+            }            
+            #toggle {
+                display: none;
+            }
+            #toggle:checked + .menu{
+                display: block;
+            }
+            
+        }
+    }
+    .intro {
+        background: orange;
+        
+    }
+}
+
+.menu-open {
+    margin-top: 210px;
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    body { 
+        header {
+            text-align: center;
+            align-content: center;
+            height: 70px;
+            line-height: 70px;
+            
+            nav {
+                label {
+                    display: none;
+                }
+                #toggle {
+                    display: none;
+                }
+                .menu {
+                            
+                    background: rgb(56, 55, 55); 
+                    width: 100%;
+                    display: block;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-size: 25px;
+                        margin: 0 40px ;
+                        border: none;
+                        display: inline-block;
+                    }     
                 }
             }
+        }  
+        .intro {
+            position: absolute;
+            left: -900px;
+            background: rgb(32, 31, 31);
+            width: 900px;
+            height: 60vh;
+            margin: 50px auto;
+            
+            .content {
+                padding: 1em;
+                h1 {
+                    color: yellow;
+                    font-size: 3em;
+                }
+                p {
+                    color: white;
+                }
+            }
+            
         }
     }
-}
-
-.intro {
-    position: absolute;
-    left: -900px;
-    background: rgb(32, 31, 31);
-    width: 900px;
-    height: 60vh;
-    margin: 50px auto;
     
-    .content {
 
-        padding: 1em;
-        h1 {
-            color: yellow;
-            font-size: 3em;
-        }
-        p {
-            color: white;
-        }
+
+    //About button
+    .showAbout {
+        
+        animation: showAbout .3s forwards ease-in;
+        
+    }
+
+    .hideAbout {
+        animation: hideAbout .3s forwards ease-in-out;
+
     }
     
-}
-
-
-//About button
-.showAbout {
-    
-    animation: showAbout .3s forwards ease-in;
-    
-}
-
-.hideAbout {
-    animation: hideAbout .3s forwards ease-in-out;
-
-}
- 
-@keyframes showAbout {
-    0%{
-       left: -900px; 
-    }
-    100%{
-       left: 30px; 
-    }
-}
-@keyframes hideAbout {
-    0%{
-        left: 30px; 
-    }
-    100%{
+    @keyframes showAbout {
+        0%{
         left: -900px; 
+        }
+        100%{
+        left: 300px; 
+        }
+    }
+    @keyframes hideAbout {
+        0%{
+            left: 30px; 
+        }
+        100%{
+            left: -900px; 
+        }
     }
 }
